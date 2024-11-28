@@ -9,7 +9,7 @@ export const useFetch = (url, initialValue) => {
             .then(response => response.json())
             .then(json => {
                 console.log('joke json', json)
-                setResult(json[0]);
+                setResult(json);
             });
     }, []);
 
