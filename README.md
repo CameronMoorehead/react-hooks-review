@@ -1,2 +1,2 @@
 # react-hooks-review
-Review of react hooks
+Review of react hooks, and directory structure ideas
