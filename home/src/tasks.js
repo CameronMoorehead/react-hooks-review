@@ -31,9 +31,6 @@ function Tasks() {
         setCompletedTasks(completedTasks.filter(completedTask => completedTask.id !== deletedTask.id));
     }
 
-    console.log('tasks', tasks);
-    console.log('completedTasks', completedTasks)
-
     return (
         <div>
             <h3>Tasks</h3>

@@ -2,9 +2,11 @@ import { useState } from "react";
 import Joke from "./joke";
 import Stories from "./stories";
 import Tasks from "./tasks";
+import Gallery from "./gallery";
 
 function App() {
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true);
 
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank');
@@ -17,17 +19,11 @@ function App() {
   }
 
   const updateUserQuery = event => {
-    // all user queries will log one behind due to closure
-    console.log('userQuery', userQuery);
-
     setUserQuery(event.target.value);
+  }
 
-    console.log('userQuery', userQuery);
-
-    setTimeout(() => {
-
-      console.log('userQuery', userQuery);
-    }, 1000)
+  const toggleShowGallery = () => {
+    setShowGallery(!showGallery);
   }
 
   return (
@@ -45,6 +41,15 @@ function App() {
       <Joke />
       <hr />
       <Tasks />
+      <hr />
+      <div>
+        {
+          showGallery ? <Gallery /> : null
+        }
+        <button onClick={ toggleShowGallery }>
+          { showGallery ? 'Hide' : 'Show' } Gallery
+        </button>
+      </div>
       <hr />
       <Stories />
     </div>
