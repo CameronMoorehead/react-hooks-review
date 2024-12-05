@@ -11,6 +11,7 @@ function App() {
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank');
   }
+console.log('test')
 
   const handleKeyPress = event => {
     if (event.code === 'Enter') {
