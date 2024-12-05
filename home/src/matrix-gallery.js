@@ -1,14 +1,15 @@
+
 import React from 'react';
-import PICTURES from './data/pictures';
+import PICTURES from './data/matrix';
 import { useGallery } from './hooks';
 
-function Gallery() {
+function MatrixGallery() {
     const { index, delay, updateDelay, updateIncrement } = useGallery(PICTURES);
 
     return (
         <div className="Gallery">
             <img
-                src={ PICTURES[index].image }
+                src={ PICTURES[index] }
                 alt='gallery'
             />
             <div className="multiform">
@@ -25,4 +26,4 @@ function Gallery() {
     )
 }
 
-export default Gallery;
+export default MatrixGallery;

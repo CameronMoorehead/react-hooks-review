@@ -3,15 +3,16 @@ import Joke from "./joke";
 import Stories from "./stories";
 import Tasks from "./tasks";
 import Gallery from "./gallery";
+import MatrixGallery from "./matrix-gallery";
 
 function App() {
   const [userQuery, setUserQuery] = useState('');
   const [showGallery, setShowGallery] = useState(true);
+  const [showMatrixGallery, setShowMatrixGallery] = useState(true);
 
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank');
   }
-console.log('test')
 
   const handleKeyPress = event => {
     if (event.code === 'Enter') {
@@ -25,6 +26,10 @@ console.log('test')
 
   const toggleShowGallery = () => {
     setShowGallery(!showGallery);
+  }
+
+  const toggleShowMatrixGallery = () => {
+    setShowMatrixGallery(!showMatrixGallery);
   }
 
   return (
@@ -52,6 +57,14 @@ console.log('test')
         </button>
       </div>
       <hr />
+      <div>
+        {
+          showMatrixGallery ? <MatrixGallery /> : null
+        }
+        <button onClick={ toggleShowMatrixGallery }>
+          {showMatrixGallery ? 'Hide' : 'Show' } Matrix Gallery
+        </button>
+      </div>
       <Stories />
     </div>
   );
